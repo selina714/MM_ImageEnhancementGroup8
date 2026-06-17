@@ -1,0 +1,48 @@
+absl-py==2.4.0
+addict==2.4.0
+backports.zstd @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_backports.zstd_1778594060/work
+-e git+https://github.com/selina714/MM_ImageEnhancement@054cb1f467e54190309af75970f54ec73fee5932#egg=basicsr
+Brotli @ file:///home/conda/feedstock_root/build_artifacts/brotli-split_1764016952863/work
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1779285033994/work/certifi
+charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1775127091311/work
+filelock @ file:///home/conda/feedstock_root/build_artifacts/filelock_1780521888565/work
+future==1.0.0
+gmpy2 @ file:///home/conda/feedstock_root/build_artifacts/gmpy2_1773244929835/work
+grpcio==1.81.0
+h2 @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_h2_1756364871/work
+hpack @ file:///home/conda/feedstock_root/build_artifacts/hpack_1737618293087/work
+hyperframe @ file:///home/conda/feedstock_root/build_artifacts/hyperframe_1737618333194/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_idna_1779999227/work
+ImageIO==2.37.3
+Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_jinja2_1764517220/work
+lazy-loader==0.5
+lmdb==2.2.1
+Markdown==3.10.2
+MarkupSafe @ file:///home/conda/feedstock_root/build_artifacts/markupsafe_1772444934960/work
+mpmath @ file:///home/conda/feedstock_root/build_artifacts/mpmath_1773661943568/work
+networkx @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_networkx_1731521053/work
+numpy @ file:///home/conda/feedstock_root/build_artifacts/numpy_1747544640217/work/dist/numpy-2.2.6-cp310-cp310-linux_x86_64.whl#sha256=d6d964caeef85d00073d27cd62b46883d275b3d8162f723f0fcabbd0b3cc3f9d
+opencv-python==4.13.0.92
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1777103621/work
+pillow==12.2.0
+platformdirs==4.10.0
+protobuf==7.35.0
+PySocks @ file:///home/conda/feedstock_root/build_artifacts/pysocks_1733217236728/work
+PyYAML @ file:///home/conda/feedstock_root/build_artifacts/pyyaml_1770223234623/work
+requests @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_requests_1778851103/work
+scikit-image==0.25.2
+scipy==1.15.3
+sympy @ file:///home/conda/feedstock_root/build_artifacts/sympy_1771952240620/work
+tb-nightly==2.21.0a20251023
+tensorboard-data-server==0.7.2
+tifffile==2025.5.10
+tomli==2.4.1
+torch==2.5.1
+torchaudio==2.5.1
+torchvision==0.20.1
+tqdm==4.68.1
+triton==3.1.0
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_typing_extensions_1756220668/work
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1778188571305/work
+Werkzeug==3.1.8
+yapf==0.43.0

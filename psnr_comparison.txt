@@ -1,0 +1,13 @@
+Validation PSNR Comparison
+
+Checkpoint:
+net_g_stage4_mse_best.pth
+
+Results:
+Raw NAFNet output: 21.0609 dB
+NAFNet + OpenCV denoise h=5: 21.0774 dB
+NAFNet + denoise h=5 + gamma 0.80: 19.5231 dB
+
+Observation:
+The h=5 denoising result has slightly higher validation PSNR than raw NAFNet.
+Gamma correction makes the image visually brighter, but it significantly reduces PSNR.

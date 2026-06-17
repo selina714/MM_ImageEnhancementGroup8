@@ -1,0 +1,89 @@
+name: lowlight_nafnet_width32
+model_type: ImageRestorationModel
+scale: 1
+num_gpu: 1
+manual_seed: 42
+datasets:
+  train:
+    name: lowlight_train
+    type: PairedImageDataset
+    dataroot_gt: /home/mislab/e/jonathan/tan/datasets/MM_ImageEnhancement/datasets/lowlight_prepared/train/gt
+    dataroot_lq: /home/mislab/e/jonathan/tan/datasets/MM_ImageEnhancement/datasets/lowlight_prepared/train/lq
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+    gt_size: 256
+    use_flip: true
+    use_rot: true
+    use_shuffle: true
+    num_worker_per_gpu: 4
+    batch_size_per_gpu: 4
+    dataset_enlarge_ratio: 1
+    prefetch_mode: null
+  val:
+    name: lowlight_val
+    type: PairedImageDataset
+    dataroot_gt: /home/mislab/e/jonathan/tan/datasets/MM_ImageEnhancement/datasets/lowlight_prepared/val/gt
+    dataroot_lq: /home/mislab/e/jonathan/tan/datasets/MM_ImageEnhancement/datasets/lowlight_prepared/val/lq
+    io_backend:
+      type: disk
+    filename_tmpl: '{}'
+network_g:
+  type: NAFNet
+  width: 32
+  enc_blk_nums:
+  - 2
+  - 2
+  - 4
+  - 8
+  middle_blk_num: 12
+  dec_blk_nums:
+  - 2
+  - 2
+  - 2
+  - 2
+path:
+  pretrain_network_g: null
+  strict_load_g: true
+  resume_state: experiments/lowlight_nafnet_width32/training_states/1000.state
+train:
+  optim_g:
+    type: AdamW
+    lr: 0.001
+    weight_decay: 0.0
+    betas:
+    - 0.9
+    - 0.9
+  scheduler:
+    type: TrueCosineAnnealingLR
+    T_max: 200000
+    eta_min: 1.0e-07
+  total_iter: 10000
+  warmup_iter: -1
+  pixel_opt:
+    type: PSNRLoss
+    loss_weight: 1
+    reduction: mean
+val:
+  val_freq: 1000
+  save_img: false
+  use_image: false
+  metrics:
+    psnr:
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: false
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: false
+logger:
+  print_freq: 100
+  save_checkpoint_freq: 1000
+  use_tb_logger: true
+  wandb:
+    project: null
+    resume_id: null
+dist_params:
+  backend: nccl
+  port: 29500
